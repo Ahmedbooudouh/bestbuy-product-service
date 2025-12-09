@@ -44,10 +44,10 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-
+// Find product by ID and update
     const updated = await Product.findByIdAndUpdate(id, req.body, {
-      new: true,          // renvoyer le document mis à jour
-      runValidators: true // appliquer les validations du schema
+      new: true,         
+      runValidators: true 
     });
 
     if (!updated) {

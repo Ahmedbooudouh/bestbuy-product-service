@@ -32,5 +32,6 @@ const productSchema = new mongoose.Schema(
     timestamps: true, // createdAt / updatedAt
   }
 );
+// Create and export the Product model
 const Product = mongoose.model('Product', productSchema);
 module.exports = Product;

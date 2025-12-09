@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const connectDB = require('./config/db');          
+const connectDB = require('./config/db');
 const productRoutes = require('./routes/productRoutes'); 
 const app = express();
 app.use(cors());
@@ -9,7 +9,7 @@ app.use("/api/products", productRoutes);
 const PORT = process.env.PORT || 4000;
 connectDB().then(() => {
     app.listen(PORT, () => {
-      console.log(`product-service is running on port ${PORT}`);
+      console.log(`product-service is listening on port ${PORT}`);
     });
   })
   .catch((error) => {
